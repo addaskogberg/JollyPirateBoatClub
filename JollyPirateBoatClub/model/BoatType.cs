@@ -5,6 +5,9 @@ using System.Text;
 
 namespace JollyPirateBoatClub
 {
+    /// <summary>
+    /// enum for boattype
+    /// </summary>
     public enum BoatType
     {
         Sailboat,

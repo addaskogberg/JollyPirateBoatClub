@@ -5,6 +5,9 @@ using System.Text;
 
 namespace JollyPirateBoatClub
 {
+    /// <summary>
+    /// class that manages member action
+    /// </summary>
     public class MemberManager
     {
         private List<Member> memberList;
@@ -15,7 +18,7 @@ namespace JollyPirateBoatClub
         private int memberID = 1;
         private int boatID = 1;
         private FileManager fileManager;
-
+        // constructor 
         public MemberManager()
         {
             menuView = new MenuView();
@@ -26,7 +29,7 @@ namespace JollyPirateBoatClub
 
             List<Member> members = fileManager.ReadFromFile();
             memberList = members;
-            if(memberList.Count > 0)
+            if (memberList.Count > 0)
             {
                 currentMember = memberList.First();
             }
@@ -69,10 +72,11 @@ namespace JollyPirateBoatClub
         }
         #endregion
 
+        // initializes the methods according to choise from MenuVIew
         internal void PrintMenu()
         {
             int menuItem = menuView.PrintMenu();
-            if(menuItem == 1) // compact list
+            if (menuItem == 1) // compact list
             {
                 Console.WriteLine("returned value " + menuItem);
                 memberListViewCompact.PrintCompactList(memberList);
@@ -87,7 +91,7 @@ namespace JollyPirateBoatClub
                 Console.WriteLine("returned value " + menuItem);
                 CreateMember();
                 Console.WriteLine(memberList.First().Name);
-                //memberList.First().CreateBoat(menuView);
+
             }
             else if (menuItem == 4) // Update member
             {
@@ -133,6 +137,7 @@ namespace JollyPirateBoatClub
             PrintMenu();
         }
 
+        // create a new member
         public void CreateMember()
         {
             string name = menuView.AskForName();
@@ -155,6 +160,7 @@ namespace JollyPirateBoatClub
             }
         }
 
+        // updates member
         public void UpdateMember()
         {
             menuView.PrintMessage("Give your member " + currentMember.Name + " a new name:");
@@ -162,9 +168,10 @@ namespace JollyPirateBoatClub
             menuView.PrintMessage("The new name of member is: " + currentMember.Name);
         }
 
+        // deletes member
         public void DeleteMember()
         {
-            if(memberList.Count > 0)
+            if (memberList.Count > 0)
             {
                 string name = currentMember.Name;
                 memberList.Remove(currentMember);
@@ -184,6 +191,8 @@ namespace JollyPirateBoatClub
             }
         }
 
+
+        // creates the memeber boat
         private void CreateBoat()
         {
             try

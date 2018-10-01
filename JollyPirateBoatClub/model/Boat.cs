@@ -11,12 +11,12 @@ namespace JollyPirateBoatClub
     /// </summary>
     public class Boat
     {
-        private BoatType boatType;  
+        private BoatType boatType;
         private int length;
         private int boatID = 1;
-  
 
-        public Boat( int length, int boatID, BoatType boatType)
+
+        public Boat(int length, int boatID, BoatType boatType)
         {
             Length = length;
             BoatId = boatID;
@@ -41,11 +41,14 @@ namespace JollyPirateBoatClub
             set => boatID = value;
         }
 
-      /*  public override string ToString()
-        {
-            return BoatType + ", Length: " + Length + ", BoatID: " + BoatId ;
-        }
-   */
+        #region testMethods
+        /*  public override string ToString()
+          {
+              return BoatType + ", Length: " + Length + ", BoatID: " + BoatId ;
+          }
+     */
+        #endregion
+
         public string ToFileString()
         {
             return BoatType + ", " + Length + ", " + BoatId;

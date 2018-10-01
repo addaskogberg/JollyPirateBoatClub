@@ -7,6 +7,9 @@ namespace JollyPirateBoatClub
 {
     public class Member
     {
+        /// <summary>
+        /// This class manages the member and the boats of a member
+        /// </summary>
         public List<Boat> boats;
         // constructor for member
         public Member(string name, string personalNumber, int memberID)
@@ -28,7 +31,7 @@ namespace JollyPirateBoatClub
 
         public Boat CurrentBoat { get; set; }
 
-        public List <Boat> Boats { get; set; }
+        public List<Boat> Boats { get; set; }
 
         public void AddTestBoat(int length, int boatID, BoatType type)
         {
@@ -36,11 +39,12 @@ namespace JollyPirateBoatClub
             NumberOfBoats++;
         }
 
+        //method to crate the member boat checks the enum to get a correct boat and initiates length
         public Boolean CreateBoat(MenuView menuView, int boatID)
         {
             string boatType = menuView.AskForBoatType();
             BoatType type;
-            while(!Enum.TryParse(boatType, out type))
+            while (!Enum.TryParse(boatType, out type))
             {
                 menuView.PrintMessage("invalid boat type, use one of following: Sailboat, Motorsailer, KajakCanoe, Other");
                 boatType = menuView.AskForBoatType();
@@ -53,6 +57,7 @@ namespace JollyPirateBoatClub
             return true;
         }
 
+        // updates the member boat
         public void UpdateBoat(MenuView menuView)
         {
             menuView.PrintMessage("Give your boat a new length (currently: " + CurrentBoat.Length + ")");
@@ -67,6 +72,7 @@ namespace JollyPirateBoatClub
             menuView.PrintMessage("The new length of boat is: " + CurrentBoat.Length);
         }
 
+        // checks if member has boats
         public void ReadBoat(MenuView menuView)
         {
             if (NumberOfBoats == 0)
@@ -77,9 +83,10 @@ namespace JollyPirateBoatClub
             {
                 menuView.PrintMessage(CurrentBoat.ToString());
             }
-            
+
         }
 
+        // Deletes a members boat
         public void DeleteBoat(MenuView menuView)
         {
             if (NumberOfBoats > 0)
@@ -115,7 +122,7 @@ namespace JollyPirateBoatClub
 
         public override string ToString()
         {
-            return Name + ", " + PersonalNumber + ", MemberID: " + MemberID + ", NumberOfBOats: " + NumberOfBoats ;
+            return Name + ", " + PersonalNumber + ", MemberID: " + MemberID + ", NumberOfBOats: " + NumberOfBoats;
         }
     }
 }

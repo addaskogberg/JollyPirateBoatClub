@@ -6,13 +6,16 @@ using System.Text;
 
 namespace JollyPirateBoatClub
 {
+    /// <summary>
+    /// Manages saving and reading from file.
+    /// returns the list of members and boats
+    /// </summary>
     public class FileManager
     {
         private const string path = @"members.txt";
 
         public void SaveToFile(List<Member> theList)
         {
-            //string path = @"members.txt";
             if (!File.Exists(path))
             {
                 var myFile = File.Create(path);
@@ -38,7 +41,7 @@ namespace JollyPirateBoatClub
             List<Member> myList = new List<Member>();
             if (File.Exists(path))
             {
-                Member thisMember = new Member(" will never be used", " ", 0);
+                Member thisMember = new Member(" member", " ", 0);
                 int memberIndex = -1;
                 foreach (string line in File.ReadLines(path))
                 {
@@ -52,12 +55,7 @@ namespace JollyPirateBoatClub
                         Enum.TryParse(boat[0], out type);
                         myList[memberIndex].boats.Add(new Boat(Int32.Parse(boat[1]), Int32.Parse(boat[2]), type));
                         myList[memberIndex].NumberOfBoats++;
-                        
-                        //Console.WriteLine(":" + boat[1] + ":" + boat[2] + ":");
-                        //thisMember.boats.Add(new Boat(4, 12, BoatType.KajakCanoe));
-                        //Console.WriteLine(boat[0]);
-                        //Console.WriteLine(boat[1]);
-                        //Console.WriteLine(boat[2]);
+
                     }
                     else
                     {
@@ -67,12 +65,9 @@ namespace JollyPirateBoatClub
                         thisMember = new Member(member[0], member[1], Int32.Parse(member[2]));
                         myList.Add(thisMember);
                         memberIndex++;
-                        //Console.WriteLine(member[0]);
-                        //Console.WriteLine(member[1]);
-                        //Console.WriteLine(member[2]);
+
                     }
 
-                    //Console.WriteLine(line);
                 }
             }
             return myList;
