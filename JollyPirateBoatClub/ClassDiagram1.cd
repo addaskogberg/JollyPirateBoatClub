@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="JollyPirateBoatClub.Member">
+    <Position X="3.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gAQIAAAAAAABAAAEAgABACQAAQAAAAAAABAAAAAhASA=</HashCode>
+      <FileName>model\Member.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="boats" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="JollyPirateBoatClub.MemberListViewCompact">
+    <Position X="12.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>view\MemberListViewCompact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JollyPirateBoatClub.MemberListViewVerbose">
+    <Position X="12.75" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>view\MemberListViewVerbose.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JollyPirateBoatClub.Boat">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAEAAAEAEAAAABAAAAAAAQAAAQAAAAEAAA=</HashCode>
+      <FileName>model\Boat.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="boatType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="JollyPirateBoatClub.MemberManager">
+    <Position X="8.25" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>gAEIAAAAAAAFAICBgEAAAACCAIAIAAAAiCAAAAAgAAA=</HashCode>
+      <FileName>model\MemberManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="fileManager" />
+      <Field Name="menuView" />
+      <Field Name="memberListViewCompact" />
+      <Field Name="memberListViewVerbose" />
+      <Field Name="currentMember" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="memberList" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="JollyPirateBoatClub.MenuView">
+    <Position X="12.75" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAAAAAAAAAAAEAAAIAAQAAAAAAAgAAAAAA=</HashCode>
+      <FileName>view\MenuView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JollyPirateBoatClub.FileManager">
+    <Position X="8.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAQAAAAACAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>model\FileManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="JollyPirateBoatClub.BoatType">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAABAAAA=</HashCode>
+      <FileName>model\BoatType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,2 @@
+﻿Assuming boatID is needed to identify what boat is deleted or updated.
+ReadBoat method added to Member
